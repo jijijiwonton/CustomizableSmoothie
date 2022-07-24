@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Ingredients {
 	
+	ArrayList<String[]> igd = new ArrayList<String[]>();
 	ArrayList<SpecialIngredients> seasonal = new ArrayList<SpecialIngredients>();
 
 	/**
@@ -30,5 +31,9 @@ public class Ingredients {
 	 */
 	public ArrayList<SpecialIngredients> viewSeasonalIngredients() {
 		return seasonal;
+	}
+
+	protected void nonCustomizableSmoothie(String[] ingredients) {
+		igd.add(ingredients);
 	}
 };
