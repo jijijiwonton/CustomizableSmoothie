@@ -1,6 +1,8 @@
 package Customization;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 enum Ingredient {
 	Acai(Quantity.OneScoop, 40, 2.5),
@@ -22,7 +24,7 @@ enum Ingredient {
 		this.calorie = c;
 		this.price = p;
 	};
-	
+
 	Quantity quantity;
 	double calorie;
 	double price;

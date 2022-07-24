@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public record Customization(Ingredients[] ingredients, boolean isExtra, boolean isLess, boolean isAllergic, PowderIngredient isPowderAdded, ToppingIngredient isToppingAdded) implements Menu {
 
-	static HashMap<Customization, Ingredient[]> c = new HashMap<Customization, Ingredient[]>();
+	static HashMap<Customization, String[]> c = new HashMap<Customization, String[]>();
 	
 	@Override
 	public void addMenu() {
@@ -19,7 +19,7 @@ public record Customization(Ingredients[] ingredients, boolean isExtra, boolean 
 	}
 
 	@Override
-	public HashMap<NonCustomaziable, Ingredient[]> menuForNonCutomizableSmoothie() {
+	public HashMap<NonCustomaziable, String[]> menuForNonCutomizableSmoothie() {
 		// TODO Auto-generated method stub
 		return null;
 	}

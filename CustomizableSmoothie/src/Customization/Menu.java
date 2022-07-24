@@ -10,5 +10,5 @@ interface Menu {
 	
 	public void deleteMenu();
 
-	HashMap<NonCustomaziable, Ingredient[]> menuForNonCutomizableSmoothie();
+	HashMap<NonCustomaziable, String[]> menuForNonCutomizableSmoothie();
 }
