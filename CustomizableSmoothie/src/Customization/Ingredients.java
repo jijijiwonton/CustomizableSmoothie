@@ -36,6 +36,18 @@ enum Quantity {
 	HalfGlass
 }
 
+enum PowderIngredient {
+	Chocolate,
+	Cinamon,
+	Matcha,
+	Greentea,
+	Ginger
+}
+
+enum ToppingIngredient {
+	Mint
+}
+
 public class Ingredients {
 	
 	ArrayList<String[]> igd = new ArrayList<String[]>();
