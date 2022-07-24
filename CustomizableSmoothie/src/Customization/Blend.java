@@ -1,5 +1,5 @@
 package Customization;
 
-public class Blend {
+public record Blend() {
 
-}
+};
