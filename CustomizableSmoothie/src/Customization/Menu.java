@@ -3,6 +3,15 @@ package Customization;
 import java.util.Collection;
 import java.util.HashMap;
 
+enum Name {
+	EchoOfDevil,
+	GreenSun,
+	GreenParty,
+	RedParty,
+	YellowParty,
+	VitaminBooster,
+	HappyDessert
+}
 
 public class Menu {
 
