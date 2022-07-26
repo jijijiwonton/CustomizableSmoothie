@@ -17,7 +17,7 @@ enum NonCustomaziable {
 public record NonCustomization() implements Menu {
 	
 	static HashMap<NonCustomaziable, String[]> name = new HashMap<NonCustomaziable, String[]>();
-	static HashMap<NonCustomaziable, double[]> calorie = new HashMap<NonCustomaziable, double[]>();
+	static HashMap<NonCustomaziable, Double> calorie = new HashMap<NonCustomaziable, Double>();
 	
 	@Override
 	// TODO: Admin only for special menu
@@ -84,39 +84,58 @@ public record NonCustomization() implements Menu {
 	 * @param Enum for calorie
 	 * @return calorie
 	 */
-//	public List<double[]> getSmoothieCalorie(NonCustomaziable calorie) {
-//		switch(calorie) {
-//		case EchoOfDevil:
-//			double[] ed = {Ingredient.Acai.calorie, Ingredient.Apple.calorie, Ingredient.Apricot.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.EchoOfDevil, ed);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.EchoOfDevil));
-//		case GreenParty:
-//			double[] gp = {Ingredient.Avocado.calorie, Ingredient.Apple.calorie, Ingredient.Banana.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.GreenParty, gp);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.GreenParty));
-//		case GreenSun:
-//			double[] gs = {Ingredient.Kiwi.calorie, Ingredient.Blueberry.calorie, Ingredient.Peach.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.GreenSun, gs);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.GreenSun));
-//		case HappyDessert:
-//			double[] hd = {Ingredient.Dates.calorie, Ingredient.Pear.calorie, Ingredient.Peach.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.HappyDessert, hd);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.HappyDessert));
-//		case RedParty:
-//			double[] rp = {Ingredient.Acai.calorie, Ingredient.Apple.calorie, Ingredient.Apricot.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.RedParty, rp);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.RedParty));
-//		case VitaminBooster:
-//			double[] vb = {Ingredient.Acai.calorie, Ingredient.Apple.calorie, Ingredient.Apricot.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.VitaminBooster, vb);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.VitaminBooster));
-//		case YellowParty:
-//			double[] yp = {Ingredient.Kiwi.calorie, Ingredient.Blueberry.calorie, Ingredient.Peach.calorie};
-//			NonCustomization.calorie.put(NonCustomaziable.YellowParty, yp);
-//			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.YellowParty));
-//		default:
-//			break;
-//		}
-//		return null;
-//	}
+	public List<Double> getSmoothieCalorie(NonCustomaziable calorie) {
+		switch(calorie) {
+		case EchoOfDevil:
+			double[] ed = {Ingredient.Acai.calorie, Ingredient.Apple.calorie, Ingredient.Apricot.calorie};
+			double total = calculateCalories(ed);
+			NonCustomization.calorie.put(NonCustomaziable.EchoOfDevil, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.EchoOfDevil));
+		case GreenParty:
+			double[] gp = {Ingredient.Avocado.calorie, Ingredient.Apple.calorie, Ingredient.Banana.calorie};
+			total = calculateCalories(gp);
+			NonCustomization.calorie.put(NonCustomaziable.GreenParty, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.GreenParty));
+		case GreenSun:
+			double[] gs = {Ingredient.Kiwi.calorie, Ingredient.Blueberry.calorie, Ingredient.Peach.calorie};
+			total = calculateCalories(gs);
+			NonCustomization.calorie.put(NonCustomaziable.GreenSun, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.GreenSun));
+		case HappyDessert:
+			double[] hd = {Ingredient.Dates.calorie, Ingredient.Pear.calorie, Ingredient.Peach.calorie};
+			total = calculateCalories(hd);
+			NonCustomization.calorie.put(NonCustomaziable.HappyDessert, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.HappyDessert));
+		case RedParty:
+			double[] rp = {Ingredient.Acai.calorie, Ingredient.Apple.calorie, Ingredient.Apricot.calorie};
+			total = calculateCalories(rp);
+			NonCustomization.calorie.put(NonCustomaziable.RedParty, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.RedParty));
+		case VitaminBooster:
+			double[] vb = {Ingredient.Acai.calorie, Ingredient.Apple.calorie, Ingredient.Apricot.calorie};
+			total = calculateCalories(vb);
+			NonCustomization.calorie.put(NonCustomaziable.VitaminBooster, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.VitaminBooster));
+		case YellowParty:
+			double[] yp = {Ingredient.Kiwi.calorie, Ingredient.Blueberry.calorie, Ingredient.Peach.calorie};
+			total = calculateCalories(yp);
+			NonCustomization.calorie.put(NonCustomaziable.YellowParty, total);
+			return Arrays.asList(NonCustomization.calorie.get(NonCustomaziable.YellowParty));
+		default:
+			break;
+		}
+		return null;
+	}
+
+	/**
+	 * Calculate all ingredient's calories
+	 * @param totalIngredients
+	 * @return total calories
+	 */
+	public double calculateCalories(double[] totalIngredients) {
+		double total = 0;
+		for(int count = 0; count < totalIngredients.length; count++) {
+			total += totalIngredients[count];
+		} return total;
+	}
 }
