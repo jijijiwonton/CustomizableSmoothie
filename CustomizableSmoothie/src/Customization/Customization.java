@@ -21,7 +21,7 @@ public record Customization(Ingredients[] ingredients, boolean isExtra, boolean 
 	}
 
 	@Override
-	public HashMap<NonCustomaziable, String[]> menuForNonCutomizableSmoothie() {
+	public List<NonCustomaziable> menuForNonCutomizableSmoothie() {
 		// TODO Auto-generated method stub
 		return null;
 	}

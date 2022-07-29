@@ -25,6 +25,18 @@ enum Ingredient {
 		this.price = p;
 	};
 
+	public static Quantity getQuantity(Ingredient igd) {
+		return igd.quantity;
+	}
+
+	public static double getCalories(Ingredient igd) {
+		return igd.calorie;
+	}
+
+	public static double getPrice(Ingredient igd) {
+		return igd.price;
+	}
+
 	Quantity quantity;
 	double calorie;
 	double price;
