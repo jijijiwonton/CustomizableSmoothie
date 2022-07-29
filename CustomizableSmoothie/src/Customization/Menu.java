@@ -7,10 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 interface Menu {
-	
-	public void addMenu();
-	
-	public void deleteMenu();
 
-	List<NonCustomaziable> menuForNonCutomizableSmoothie();
+	List<NonCustomaziable> menu();
 }

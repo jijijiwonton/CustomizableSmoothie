@@ -31,21 +31,7 @@ public record NonCustomization() implements Menu {
 	static HashMap<NonCustomaziable, Double> calorie = new HashMap<NonCustomaziable, Double>();
 	
 	@Override
-	// TODO: Admin only for special menu
-	public void addMenu() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	// TODO: Admin only for special case
-	public void deleteMenu() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<NonCustomaziable> menuForNonCutomizableSmoothie() {
+	public List<NonCustomaziable> menu() {
 		return Arrays.asList(NonCustomaziable.values());
 	}
 }

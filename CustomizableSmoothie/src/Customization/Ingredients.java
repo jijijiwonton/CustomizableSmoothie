@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 enum Ingredient {
+	Water(Quantity.HalfGlass, 0, 0),
+	Milk(Quantity.HalfGlass, 0, 0),
+	AlmondMilk(Quantity.HalfGlass, 0, 0),
+	SoyMilk(Quantity.HalfGlass, 0, 0),
 	Acai(Quantity.OneScoop, 40, 2.5),
 	Apple(Quantity.Half, 40, 1),
 	Apricot(Quantity.One, 17, 0.8),
@@ -51,6 +55,7 @@ enum Quantity {
 }
 
 enum PowderIngredient {
+	Nothing,
 	Chocolate,
 	Cinamon,
 	Matcha,
@@ -59,6 +64,7 @@ enum PowderIngredient {
 }
 
 enum ToppingIngredient {
+	Nothing,
 	Mint
 }
 
