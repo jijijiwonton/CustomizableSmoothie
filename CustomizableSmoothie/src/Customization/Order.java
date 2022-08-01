@@ -16,10 +16,11 @@ public class Order {
 	public void OrderSmoothie() {
 
 		int userInput = _orderingSystem();
+
 		String smoothie;
 		switch(userInput) {
-		case CUSTOMIZED:
-			System.out.println("Thanks for using our Customized smoothie program!");
+		case QUIT_PROGRAM:
+			System.out.println("Thanks for using Customized smoothie program");
 			break;
 		case ORDER_SMOOTHIE:
 			System.out.println(NON_CUSTOMIZATION + " : Order non-customized smoothie");
@@ -65,7 +66,7 @@ public class Order {
 		System.out.println("How many ingredients would you like to put for your smoothie?");
 		int numberOfOptions = input.nextInt();
 
-		Ingredient selectedOption = null;
+		Ingredient selectedMainIngredient = null;
 		int userOption = 0;
 		Ingredient[] total = new Ingredient[numberOfOptions];
 
@@ -73,15 +74,34 @@ public class Order {
 		for(int i = 0; i < numberOfOptions; i++) {
 			System.out.println("Please enter ingredients number (from 0) :)");
 			userOption = input.nextInt();
-			selectedOption = ingredientList.get(userOption);
+			selectedMainIngredient = ingredientList.get(userOption);
 
 			// Display for users to check what they selected
-			System.out.println(selectedOption);
-			total[i] = selectedOption;
+			System.out.println(selectedMainIngredient);
+			total[i] = selectedMainIngredient;
 		}
 
-		// TODO: Customization for other options should be refactoring
-		Customization c = new Customization(PowderIngredient.Nothing, ToppingIngredient.Mint, BlendLevel.Well_Blended, Arrays.asList(total));
+		// Asking for user to choose Powder and Topping
+		System.out.println("Please enter Powder ingredients added or not (from 0) :)");
+		List<PowderIngredient> powderList = new Ingredients().powderIngredientList();
+		System.out.println(powderList);
+		userOption = input.nextInt();
+		PowderIngredient selectedPowder = powderList.get(userOption);
+
+		System.out.println("Please enter Topping ingredients added or not (from 0) :)");
+		List<ToppingIngredient> toppingList = new Ingredients().toppingIngredientList();
+		System.out.println(new Ingredients().toppingIngredientList());
+		userOption = input.nextInt();
+		ToppingIngredient selectedTopping = toppingList.get(userOption);
+
+		// Asking for user to choose blend level
+		System.out.println("Please enter Blend level (from 0) :)");
+		List<BlendLevel> blendLevel = new Ingredients().blendLevelList();
+		System.out.println(new Ingredients().blendLevelList());
+		userOption = input.nextInt();
+		BlendLevel blendLev = blendLevel.get(userOption);
+
+		Customization c = new Customization(Arrays.asList(selectedPowder), Arrays.asList(selectedTopping), Arrays.asList(blendLev), Arrays.asList(total));
 		return c.getCusomizedSmoothieDetails(c);
 	}
 

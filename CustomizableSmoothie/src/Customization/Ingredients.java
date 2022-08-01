@@ -99,7 +99,35 @@ public class Ingredients {
 		return seasonal;
 	}
 
+	/**
+	 * Get available main ingredients list
+	 * @return main ingredients
+	 */
 	public List<Ingredient> IngredientsList() {
 		return Arrays.asList(Ingredient.values());
+	}
+
+	/**
+	 * Get available powder ingredients
+	 * @return powder ingredients
+	 */
+	public List<PowderIngredient> powderIngredientList() {
+		return Arrays.asList(PowderIngredient.values());
+	}
+
+	/**
+	 * Get available topping ingredients
+	 * @return topping ingredients
+	 */
+	public List<ToppingIngredient> toppingIngredientList() {
+		return Arrays.asList(ToppingIngredient.values());
+	}
+
+	/**
+	 * Get Blend level options
+	 * @return blend level
+	 */
+	public List<BlendLevel> blendLevelList() {
+		return Arrays.asList(BlendLevel.values());
 	}
 };
