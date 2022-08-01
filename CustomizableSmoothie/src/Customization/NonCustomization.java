@@ -18,7 +18,12 @@ enum NonCustomaziable {
 		this.ingredients = ingredients;
 	}
 
-	public static ArrayList<Ingredient> getIngredients(Ingredient...ingredients) {
+	/**
+	 * Display ingredients of non-customized smoothie
+	 * @param ingredients
+	 * @return ingredients of non-customized smoothie
+	 */
+	private static ArrayList<Ingredient> getIngredients(Ingredient...ingredients) {
 		return new ArrayList<Ingredient>(Arrays.asList(ingredients));
 	}
 
@@ -30,8 +35,13 @@ public record NonCustomization() implements Menu {
 	static HashMap<NonCustomaziable, String[]> name = new HashMap<NonCustomaziable, String[]>();
 	static HashMap<NonCustomaziable, Double> calorie = new HashMap<NonCustomaziable, Double>();
 	
+	/**
+	 * A menu method to display all non-customized smoothie's name
+	 * @return NonCustomaziable (Enum)
+	 */
 	@Override
 	public List<NonCustomaziable> menu() {
+		System.out.println("***** Non-customized smoothie *****");
 		return Arrays.asList(NonCustomaziable.values());
 	}
 }

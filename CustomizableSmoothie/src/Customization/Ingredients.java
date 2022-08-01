@@ -99,7 +99,7 @@ public class Ingredients {
 		return seasonal;
 	}
 
-	protected void nonCustomizableSmoothie(String[] ingredients) {
-		igd.add(ingredients);
+	public List<Ingredient> IngredientsList() {
+		return Arrays.asList(Ingredient.values());
 	}
 };
