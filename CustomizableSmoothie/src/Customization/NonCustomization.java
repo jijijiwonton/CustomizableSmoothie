@@ -16,6 +16,7 @@ enum NonCustomaziable {
 
 	NonCustomaziable(ArrayList<Ingredient> ingredients) {
 		this.ingredients = ingredients;
+		this.calories = calculateCalories(ingredients);
 	}
 
 	/**
@@ -26,8 +27,24 @@ enum NonCustomaziable {
 	private static ArrayList<Ingredient> getIngredients(Ingredient...ingredients) {
 		return new ArrayList<Ingredient>(Arrays.asList(ingredients));
 	}
+	
+	/**
+	 * Calculate total calories
+	 * @param ingredients
+	 * @return total calories of non-customized smoothie
+	 */
+	private static double calculateCalories(ArrayList<Ingredient> ingredients) {
+		double totalCalories = 0;
+		
+		for(int i = 0; i < ingredients.size(); i++) {
+			totalCalories += ingredients.get(i).calorie;
+		}
+
+		return totalCalories;
+	}
 
 	ArrayList<Ingredient> ingredients;
+	double calories;
 }
 
 public record NonCustomization() implements Menu {

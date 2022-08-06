@@ -169,6 +169,7 @@ public class Order {
 
 		return "***** Non customized smoothie *****" + "\n" +
 			   "Smoothie    : " + selectedSmoothie.name() + "\n" +
-			   "Ingredients : " + selectedSmoothie.ingredients;
+			   "Ingredients : " + selectedSmoothie.ingredients + "\n" + 
+			   "Calories    : " + selectedSmoothie.calories;
 	}
 }
