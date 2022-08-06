@@ -23,13 +23,14 @@ public record Customization(List<PowderIngredient> powder, List<ToppingIngredien
 			   "Powder      : " + Arrays.asList(c.powder()) + "\n" +
 	           "Topping     : " + Arrays.asList(c.topping()) + "\n" +
 			   "Blend Level : " + Arrays.asList(c.blendLevel()) + "\n" +
-	           "Calories    : " + calculateCalories(c.ingredients());
+	           "Calories    : " + calculateCalories(c.ingredients()) + "\n" +
+			   "Price       : " + "$" + calculatePrice(c.ingredients());
 	}
 
 	/**
 	 * A private helper function to calculate total calories of customized smoothie
 	 * @param ingredients
-	 * @return
+	 * @return totalCalories
 	 */
 	private double calculateCalories(List<Ingredient> ingredients) {
 		double totalCalories = 0;
@@ -38,5 +39,20 @@ public record Customization(List<PowderIngredient> powder, List<ToppingIngredien
 			totalCalories += ingredients.get(i).calorie;
 		}
 		return totalCalories;
+	}
+	
+	/**
+	 * A private helper function to calculate total price of customized smoothie
+	 * @param ingredients
+	 * @return totalPrice
+	 */
+	private double calculatePrice(List<Ingredient> ingredients) {
+		double totalPrice = 0;
+		
+		for(int i = 0; i < ingredients.size(); i++) {
+			totalPrice += ingredients.get(i).price;
+		}
+		
+		return totalPrice;
 	}
 }
