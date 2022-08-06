@@ -17,6 +17,7 @@ enum NonCustomaziable {
 	NonCustomaziable(ArrayList<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 		this.calories = calculateCalories(ingredients);
+		this.price = calculatePrice(ingredients);
 	}
 
 	/**
@@ -42,9 +43,25 @@ enum NonCustomaziable {
 
 		return totalCalories;
 	}
+	
+	/**
+	 * Calculate total price
+	 * @param ingredients
+	 * @return total price of non-customized smoothie
+	 */
+	private static double calculatePrice(ArrayList<Ingredient> ingredients) {
+		double totalPrice = 0;
+		
+		for(int i = 0; i < ingredients.size(); i++) {
+			totalPrice += ingredients.get(i).price;
+		}
+		
+		return totalPrice;
+	}
 
 	ArrayList<Ingredient> ingredients;
 	double calories;
+	double price;
 }
 
 public record NonCustomization() implements Menu {
