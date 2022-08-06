@@ -1,5 +1,6 @@
 package Customization;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,6 +22,21 @@ public record Customization(List<PowderIngredient> powder, List<ToppingIngredien
 	           "Ingredients : " + Arrays.asList(c.ingredients()) + "\n" +
 			   "Powder      : " + Arrays.asList(c.powder()) + "\n" +
 	           "Topping     : " + Arrays.asList(c.topping()) + "\n" +
-			   "Blend Level : " + Arrays.asList(c.blendLevel());
+			   "Blend Level : " + Arrays.asList(c.blendLevel()) + "\n" +
+	           "Calories    : " + calculateCalories(c.ingredients());
+	}
+
+	/**
+	 * A private helper function to calculate total calories of customized smoothie
+	 * @param ingredients
+	 * @return
+	 */
+	private double calculateCalories(List<Ingredient> ingredients) {
+		double totalCalories = 0;
+		
+		for(int i = 0; i < ingredients.size(); i++) {
+			totalCalories += ingredients.get(i).calorie;
+		}
+		return totalCalories;
 	}
 }
