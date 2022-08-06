@@ -78,4 +78,17 @@ public record NonCustomization() implements Menu {
 		System.out.println("***** Non-customized smoothie *****");
 		return Arrays.asList(NonCustomaziable.values());
 	}
+	
+	/**
+	 * Display details info of non-customized smoothie by customer
+	 * @param nc
+	 * @return non-customized smoothie info
+	 */
+	public String getNonCusomizedSmoothieDetails(NonCustomaziable nc) {
+		return "***** Non customized smoothie *****" + "\n" +
+				   "Smoothie    : " + nc.name() + "\n" +
+				   "Ingredients : " + nc.ingredients + "\n" + 
+				   "Calories    : " + nc.calories + "\n" +
+				   "Price       : " + "$" + nc.price;
+	}
 }

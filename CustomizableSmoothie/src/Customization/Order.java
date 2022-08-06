@@ -167,10 +167,6 @@ public class Order {
 		
 		System.out.println();
 
-		return "***** Non customized smoothie *****" + "\n" +
-			   "Smoothie    : " + selectedSmoothie.name() + "\n" +
-			   "Ingredients : " + selectedSmoothie.ingredients + "\n" + 
-			   "Calories    : " + selectedSmoothie.calories + "\n" +
-			   "Price       : " + "$" +selectedSmoothie.price;
+		return new NonCustomization().getNonCusomizedSmoothieDetails(selectedSmoothie);
 	}
 }
