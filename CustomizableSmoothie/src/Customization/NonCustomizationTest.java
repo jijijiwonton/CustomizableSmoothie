@@ -42,25 +42,13 @@ class NonCustomizationTest {
 	 */
 	@Test
 	void testGetNonCusomizedSmoothieDetails() {
-		// Actual smoothie information
-		String actualName = "VitaminBooster";
-		String[] actualIngredients = {"BloodOrange", "Lemon", "Apricot", "Peach"};
-		double actualCalories = 77;
-		double actualPrice = 5.3;
-		
-		nc.getNonCusomizedSmoothieDetails(NonCustomaziable.VitaminBooster);
-		
 		String actualDetails = "***** Non customized smoothie *****\n"
 				+ "Smoothie    : VitaminBooster\n"
 				+ "Ingredients : [BloodOrange, Lemon, Apricot, Peach]\n"
 				+ "Calories    : 77.0\n"
 				+ "Price       : $5.3";
 		
-		String expectedDetails = "***** Non customized smoothie *****" + "\n" +
-				   "Smoothie    : " + actualName + "\n" +
-				   "Ingredients : " + Arrays.asList(actualIngredients) + "\n" + 
-				   "Calories    : " + actualCalories + "\n" +
-				   "Price       : " + "$" + actualPrice;
+		String expectedDetails = nc.getNonCusomizedSmoothieDetails(NonCustomaziable.VitaminBooster);
 		
 		assertEquals(expectedDetails, actualDetails);
 	}
