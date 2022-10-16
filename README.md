@@ -13,7 +13,7 @@ Based on these options, the user can see displayed items.
 Ingredients, Powder, Topping, Blend level, Calories and Price
 
 For this project, I wrote a code based on OOP concepts.
-Enum, public record(), List<>, Inheritance, Composite, Customized exceptions, 
-Switch, Static variable, Scanner, ArrayList, Interface, etc.
+Enum, public record(), Inheritance, Composite, Customized exceptions, 
+Switch, Static variable, Scanner, List, Hashmap, ArrayList, Interface, etc.
 
 The function is verified by Junit5.
