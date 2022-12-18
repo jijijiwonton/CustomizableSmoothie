@@ -1,19 +1,46 @@
-This console program enables us to order smoothie. Non-customized smoothie / Customized smoothie 
+# CustomizableSmoothie
 
-For non-customized smoothies, a user can order fixed items.
-For customized-smoothies, a user can choose some options. 
+## Author
+Jiwon Hwang - Currently QA Software Engineer
 
-1) How many ingredients a user add 
-2) Select the ingredients
-3) Whether to add powder or not
-4) Whether to add topping or not
-5) Select a blend level
+## Program Description
+A basic Java console program, QA is verified by Junit test.
 
-Based on these options, the user can see displayed items. 
-Ingredients, Powder, Topping, Blend level, Calories and Price
+## Folder Structure
+CustomizableSmoothie</br>
+&emsp;|CustomizableSmoothie/src</br>
+&emsp;&emsp;|Customization</br>
+&emsp;&emsp;&emsp;|-Blend.java</br>
+&emsp;&emsp;&emsp;|-Customization.java</br>
+&emsp;&emsp;&emsp;|-CustomizationTest.java</br>
+&emsp;&emsp;&emsp;|-Ingredients.java</br>
+&emsp;&emsp;&emsp;|-InternalSystem.java</br>
+&emsp;&emsp;&emsp;|-Main.java</br>
+&emsp;&emsp;&emsp;|-Menu.java</br>
+&emsp;&emsp;&emsp;|-NonCustomization.java</br>
+&emsp;&emsp;&emsp;|-NonCustomizationTest.java</br>
+&emsp;&emsp;&emsp;|-Order.java</br>
+&emsp;&emsp;&emsp;|-OutOfMenuException.java</br>
+&emsp;&emsp;&emsp;|-Reference.java</br>
+&emsp;&emsp;&emsp;|-SpecialIngredients.java</br>
 
-For this project, I wrote a code based on OOP concepts.
-Enum, public record(), Inheritance, Composite, Customized exceptions, 
-Switch, Static variable, Scanner, List, Hashmap, ArrayList, Interface, etc.
+## Running Application
+```
+Enum
+* Blend.java
+* Ingredients.java
+* NonCustomization.java
 
-The function is verified by Junit5.
+* Customization.java is a publig record that implements menu class
+it can get customized smoothie details including ingredients / powder / topping / blendlevel / calories / price</br>
+* Ingredients.java class mostly manages ingredients info
+* NonCustomization.java is doing the same action like cusomized smoothie class
+* Order.java is a model that main.java is calling
+
+Empty classes - not implemented 
+* InternalSystem.java 
+* SpecialIngredients.java
+```
+
+## Trigger
+
